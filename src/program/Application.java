@@ -1,5 +1,7 @@
 package program;
 
+import service.BrazilInterestRate;
+import service.InterestService;
 import service.UsaInterestRate;
 
 import java.util.Locale;
@@ -15,7 +17,7 @@ public class Application {
         System.out.print("Month: ");
         int months = sc.nextInt();
 
-        UsaInterestRate tax = new UsaInterestRate(1.0);
+        InterestService tax = new BrazilInterestRate(2.0);
         double payment = tax.payment(amount, months);
         System.out.println("Payment after " + months + " months: " + String.format("%.2f", payment));
 

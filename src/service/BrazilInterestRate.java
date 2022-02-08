@@ -1,18 +1,14 @@
 package service;
 
-public class BrazilInterestRate {
-    private double interest;
+public class BrazilInterestRate implements InterestService {
+    private final double interestRate;
 
-    public BrazilInterestRate(double interest) {
-        this.interest = interest;
+    public BrazilInterestRate(double interestRate) {
+        this.interestRate = interestRate;
     }
 
-    public double getInterest() {
-        return interest;
-    }
-
-    public double payment(double amount, int months) {
-        if (months < 1) throw new IllegalArgumentException("Argument months is`t acceptable.");
-        return amount * Math.pow((1 + interest / 100), months);
+    @Override
+    public double getInterestRate() {
+        return interestRate;
     }
 }
